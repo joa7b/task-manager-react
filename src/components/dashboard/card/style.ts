@@ -23,40 +23,45 @@ export const CardWrapper = styled.section`
 `;
 
 export const CardItem = styled.div`
-display: flex;
-flex-direction: column;
-height: 100%;
-width: 200px;
-border-radius: 20px;
-align-items: center;
-justify-content: center;
-font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 200px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
 
-&:first-child {
-  background-color: #E5E5E5;
-}
-
-&:not(:first-child) {
-  &:not(:last-child) {
-    width: 100%;
-    align-items: flex-start;
+  &:first-child {
+    background-color: #e5e5e5;
   }
-}
-`
 
-export const IconCardCategory = styled.i``
+  &:not(:first-child) {
+    &:not(:last-child) {
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+`;
+
+export const IconCardCategory = styled.i`
+  background: linear-gradient(180deg, #f5ba93 0%, #ef9183 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
 
 export const TaskTitle = styled.h3`
-color: #fff;
-font-weight: 400;
-font-size: 16px;
-text-transform: capitalize;
-`
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+`;
 
 export const TaskDescription = styled.p`
-color: #D9D9D9;
-font-weight: 400;
-font-size: 12px;
-`
+  color: #d9d9d9;
+  font-weight: 400;
+  font-size: 12px;
+`;
 
-export const IconCardMenu = styled.i``
+export const IconCardMenu = styled.i``;
