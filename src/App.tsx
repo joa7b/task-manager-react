@@ -1,19 +1,15 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { Navbar } from "./components/main/navbar";
-import { Tab } from "./components/dashboard/tab";
-import { Card } from "./components/dashboard/card";
-import { Footer } from "./components/main/footer";
-import { Welcome } from "./components/dashboard/welcome";
+import { Dashboard } from "./pages/Dashboard";
 
 export const App = () => {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Welcome />
-      <section>
-        <Tab />
-      </section>
-        <Card />
-      <Footer />
-    </>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 };

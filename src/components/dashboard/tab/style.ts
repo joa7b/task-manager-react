@@ -18,7 +18,9 @@ export const TabWrapper = styled.section`
 `;
 
 export const TabItem = styled.div`
-  padding: 20px 15%;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
   border-radius: 15px;
   font-size: 20px;
   font-weight: bold;

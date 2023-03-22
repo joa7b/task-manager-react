@@ -64,4 +64,6 @@ export const TaskDescription = styled.p`
   font-size: 12px;
 `;
 
-export const IconCardMenu = styled.i``;
+export const IconCardMenu = styled.i`
+  color: #fff;
+`;
