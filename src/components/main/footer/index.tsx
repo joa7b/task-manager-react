@@ -7,6 +7,8 @@ import {
 } from './style'
 
 export const Footer = () => {
+
+  
   return (
     <FooterWrapper>
       <FooterItem>

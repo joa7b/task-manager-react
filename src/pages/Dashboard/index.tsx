@@ -23,6 +23,7 @@ export const Dashboard = () => {
           taskEndHour={element.task.end_hour}
         />
       ))}
+        
       <Footer />
     </main>
   );
