@@ -8,6 +8,7 @@ type CardDate = {
 
 export const DateCard = () => {
   const [days, setDays] = useState<CardDate[]>();
+  const [activeCardDate, setActiveCardDate] = useState<number | null>(28);
 
   const getWeekDays = () => {
     let arrDate = [];
@@ -18,7 +19,9 @@ export const DateCard = () => {
       next.setDate(first + i);
       const objDate = {
         number: next.getDate(),
-        string: next.toLocaleDateString("pt-BR", { weekday: "short" }).slice(0,3),
+        string: next
+          .toLocaleDateString("pt-BR", { weekday: "short" })
+          .slice(0, 3),
       };
       arrDate.push(objDate);
     }
@@ -26,9 +29,11 @@ export const DateCard = () => {
     setDays(arrDate);
   };
 
-  const handleSelected = () => {
-    console.log('click')
-  }
+  const handleSelected = (e: any) => {
+    const crr = new Date();
+    crr.setDate(e);
+    setActiveCardDate(e);
+  };
 
   useEffect(() => {
     getWeekDays();
@@ -38,7 +43,10 @@ export const DateCard = () => {
     <DateCardWrapper>
       {days?.map((element) => {
         return (
-          <DateCardItem onClick={handleSelected}>
+          <DateCardItem
+            selected={element.number === activeCardDate}
+            onClick={() => handleSelected(element.number)}
+          >
             <WeekDays>{element.string}</WeekDays>
             <MonthDays>{element.number}</MonthDays>
           </DateCardItem>
