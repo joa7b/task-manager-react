@@ -1,22 +1,26 @@
+import { Link } from "react-router-dom";
+
 import {
-    FooterWrapper,
-    FooterItem,
-    HomeIcon,
-    PlusIcon,
-    PersonIcon
-} from './style'
+  FooterWrapper,
+  FooterItem,
+  HomeIcon,
+  PlusIcon,
+  PersonIcon,
+} from "./style";
 
 export const Footer = () => {
-
-  
   return (
     <FooterWrapper>
       <FooterItem>
-        <HomeIcon className="bi bi-house-door"></HomeIcon>
+        <Link to="/">
+          <HomeIcon className="bi bi-house-door"></HomeIcon>
+        </Link>
       </FooterItem>
 
       <FooterItem>
-        <PlusIcon className="bi bi-plus"></PlusIcon>
+        <Link to="/create-task">
+          <PlusIcon className="bi bi-plus"></PlusIcon>
+        </Link>
       </FooterItem>
 
       <FooterItem>
