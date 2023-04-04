@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.section`
-  width: 50%;
+  width: 450px;
   margin: auto;
   height: 7rem;
   display: flex;
@@ -20,12 +20,16 @@ export const CardWrapper = styled.section`
   border-radius: 15px;
   justify-content: space-evenly;
   gap: 25px;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 `;
 
 export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 90%;
   width: 200px;
   border-radius: 20px;
   align-items: center;
@@ -56,6 +60,7 @@ export const TaskTitle = styled.h3`
   font-weight: 400;
   font-size: 16px;
   text-transform: capitalize;
+  margin: 0;
 `;
 
 export const TaskDescription = styled.p`
