@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FormTaskWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 30px 100px;
+  padding: 30px 10%;
   gap: 20px;
   color: #fff;
 `;
@@ -42,11 +42,12 @@ export const FormTextAreaDescription = styled.textarea`
 `;
 
 export const ButtonSubmit = styled.button`
-  width: 325px;
+  width: 320px;
   height: 50px;
   font-weight: 600;
   font-size: 20px;
   border-radius: 15px;
+  margin-top: 25px;
 
   &:hover {
     cursor: pointer;

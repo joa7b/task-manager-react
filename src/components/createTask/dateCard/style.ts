@@ -5,9 +5,11 @@ interface IDateCardItem {
 }
 
 export const DateCardWrapper = styled.section`
-  padding: 30px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  overflow-x: scroll;
 `;
 
 export const DateCardItem = styled.div<IDateCardItem>`
