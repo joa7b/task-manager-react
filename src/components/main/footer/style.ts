@@ -16,14 +16,13 @@ export const FooterWrapper = styled.footer`
 `;
 
 export const FooterItem = styled.section`
-  font-size: 35px;
+  font-size: 30px;
   padding: 5px;
   width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   &:not(:first-child) {
     &:not(:last-child) {
       margin-bottom: 50px;
@@ -32,10 +31,20 @@ export const FooterItem = styled.section`
       color: #2f394b;
     }
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-export const HomeIcon = styled.i``;
+export const HomeIcon = styled.i`
+  color: #fff;
+`;
 
-export const PlusIcon = styled.i``;
+export const PlusIcon = styled.i`
+  color: #2f394b;
+`;
 
-export const PersonIcon = styled.i``;
+export const PersonIcon = styled.i`
+  color: #fff;
+`;

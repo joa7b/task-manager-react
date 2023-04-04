@@ -7,7 +7,19 @@ import {
   TaskDescription,
 } from "./style";
 
-export const Card = () => {
+type PropsType = {
+  taskTitle: string;
+  taskStartHour: {
+    hour: string;
+    minute: string;
+  };
+  taskEndHour: {
+    hour: string;
+    minute: string;
+  };
+};
+
+export const Card = (props: PropsType) => {
   return (
     <CardWrapper>
       <CardItem>
@@ -15,9 +27,9 @@ export const Card = () => {
       </CardItem>
 
       <CardItem>
-        <TaskTitle>Project Meeting</TaskTitle>
+        <TaskTitle>{props.taskTitle}</TaskTitle>
 
-        <TaskDescription>9 am to 11 am</TaskDescription>
+        <TaskDescription>{`${props.taskStartHour.hour} até ${props.taskEndHour.hour}`}</TaskDescription>
       </CardItem>
 
       <CardItem>
