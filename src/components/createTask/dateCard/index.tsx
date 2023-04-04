@@ -8,7 +8,7 @@ type CardDate = {
 
 export const DateCard = () => {
   const [days, setDays] = useState<CardDate[]>();
-  const [activeCardDate, setActiveCardDate] = useState<number | null>(28);
+  const [activeCardDate, setActiveCardDate] = useState<number | null>(null);
 
   const getWeekDays = () => {
     let arrDate = [];
@@ -37,6 +37,9 @@ export const DateCard = () => {
 
   useEffect(() => {
     getWeekDays();
+    const crrDate = new Date();
+    const newDate = crrDate.getDate();
+    setActiveCardDate(newDate);
   }, []);
 
   return (
