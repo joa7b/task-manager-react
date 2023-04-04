@@ -12,7 +12,7 @@ import {
 type DateCardProps = {
   setFormData: (data: object) => void;
   formData: object;
-  handleFormData: (data: object) => void;
+  handleFormData: () => void;
 }
 
 export const FormTask = (props: DateCardProps) => {
@@ -26,7 +26,7 @@ export const FormTask = (props: DateCardProps) => {
       taskDescription: taskDescription,
     }
     props.setFormData({...props.formData, ...data});
-    props.handleFormData(props.formData);
+    props.handleFormData();
   };
 
   return (

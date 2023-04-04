@@ -13,7 +13,7 @@ export type formDataTask = {
 export const CreateTask = () => {
   const [formData, setFormData] = useState<formDataTask | {}>({});
 
-  const handleFormData = async (data: any) => {
+  const handleFormData = async () => {
     const init = {
       method: "POST",
       headers: {
