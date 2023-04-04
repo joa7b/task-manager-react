@@ -1,13 +1,17 @@
 import { TabWrapper, TabItem } from "./style";
 
-export const Tab = () => {
+type TabProps = {
+  setTaskList: (value: boolean) => void;
+}
+
+export const Tab = (props: TabProps) => {
   return (
     <TabWrapper>
-      <TabItem>
+      <TabItem onClick={() => props.setTaskList(true)}>
         <p>Lista de tarefas</p>
       </TabItem>
 
-      <TabItem>
+      <TabItem onClick={() => props.setTaskList(false)}>
         <p>Completadas</p>
       </TabItem>
     </TabWrapper>
