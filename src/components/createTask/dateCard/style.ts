@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
 interface IDateCardItem {
-  selected: boolean
+  selected: boolean;
 }
 
 export const DateCardWrapper = styled.section`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 15px;
-  overflow-x: scroll;
+  width: 100%;
+  padding: 30px 0;
+
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+  }
 `;
 
 export const DateCardItem = styled.div<IDateCardItem>`
