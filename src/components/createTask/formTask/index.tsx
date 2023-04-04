@@ -1,5 +1,4 @@
 import { useState } from "react";
-import api from "../../../api/task.api";
 
 import {
   FormTaskWrapper,
@@ -10,27 +9,24 @@ import {
   ButtonSubmit,
 } from "./style";
 
-export const FormTask = () => {
+type DateCardProps = {
+  setFormData: (data: object) => void;
+  formData: object;
+  handleFormData: (data: object) => void;
+}
+
+export const FormTask = (props: DateCardProps) => {
   const [taskTitle, setTaskTitle] = useState<any>();
-  const [taskStartDate, setTaskStartDate] = useState<string>();
-  const [taskEndDate, setTaskEndDate] = useState<string>();
   const [taskDescription, setTaskDescription] = useState<string>();
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    const init = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        taskTitle,
-        taskStartDate,
-        taskEndDate,
-        taskDescription,
-      }),
-    };
-    await api.createTask(init);
+    const data = {
+      taskTitle: taskTitle,
+      taskDescription: taskDescription,
+    }
+    props.setFormData({...props.formData, ...data});
+    props.handleFormData(props.formData);
   };
 
   return (

@@ -6,7 +6,12 @@ type CardDate = {
   string: string;
 };
 
-export const DateCard = () => {
+type DateCardProps = {
+  setFormData: (data: object) => void;
+  formData: object;
+}
+
+export const DateCard = (props: DateCardProps) => {
   const [days, setDays] = useState<CardDate[]>();
   const [activeCardDate, setActiveCardDate] = useState<number | null>(null);
 
@@ -25,19 +30,20 @@ export const DateCard = () => {
       };
       arrDate.push(objDate);
     }
-
     setDays(arrDate);
   };
 
   const handleSelected = (e: any) => {
     const crr = new Date();
     crr.setDate(e);
+    props.setFormData({...FormData, taskDate: crr.toISOString()});
     setActiveCardDate(e);
   };
 
   useEffect(() => {
     getWeekDays();
     const crrDate = new Date();
+    props.setFormData({...FormData, taskDate: crrDate.toISOString()});
     const newDate = crrDate.getDate();
     setActiveCardDate(newDate);
   }, []);
